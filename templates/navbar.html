@@ -5,18 +5,18 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif; /* Fuente redondeada */
-      background-color: #F0F0F0; /* Fondo suave para el cuerpo */
+      background-color: #eeeeee; /* Fondo suave para el cuerpo */
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh; /* Ocupa toda la altura de la ventana */
+      min-height: 1vh; /* Ocupa toda la altura de la ventana */
     }
 
     .navbar {
       background-color: #444144;
-      display: flex;
+      display: flexbox;
       justify-content: space-between;
-      padding: 20px;
+      padding: 10px;
       border-radius: 10px; /* Bordes redondeados para la navbar */
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
     }
@@ -39,8 +39,14 @@
 <body>
   <nav class="navbar">
     <h1>Mi Empresa</h1>
-    <a href="#">Home</a>
-    <a href="#">Logout</a>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'Create' %}">Create</a>
+    <a href="#Logout">Logout</a>
   </nav>
+
+    {% block content %}
+    
+    {% endblock %}
+
 </body>
 </html>
