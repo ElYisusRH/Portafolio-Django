@@ -1,6 +1,11 @@
+{% extends "navbar.html" %}
 
-<h1>{{post.title}}</h1>
+{% block content %}
 
-<p>{{post.description}}</p>
+    <h1>{{post.title}}</h1>
 
-<h4><a href="Go back"></a></h4>
+    <p>{{post.description}}</p>
+
+    <h4><a href="Go back"></a></h4>
+
+{% endblock %}
