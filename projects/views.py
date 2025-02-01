@@ -17,3 +17,10 @@ class CreatePageViews(CreateView):
     template_name="create.html"
     fields= ["title","description","image"]
     success_url = reverse_lazy("home")
+
+class UpdatePageView(UpdateView):
+        
+     model=Post
+     fields= ["title","description","image"]
+     template_name="update.html"
+     success_url = reverse_lazy("home")
