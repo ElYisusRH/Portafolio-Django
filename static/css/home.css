@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/css/f1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor de los elementos del portafolio */
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Estilos para cada elemento del portafolio */
+.portfolio-item {
+    background-image: url('/static/css/f2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid #181818;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Evita que el texto se desborde */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    text-overflow: ellipsis; /* Añade puntos suspensivos (...) si el texto es demasiado largo */
+}
+
+/* Efecto al pasar el cursor sobre el elemento */
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para el título del elemento */
+.portfolio-item h1 {
+    color: #000000;
+    font-size: 24px;
+    margin: 0;
+    overflow: hidden; /* Evita que el texto se desborde */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    text-overflow: ellipsis; /* Añade puntos suspensivos (...) si el texto es demasiado largo */
+}
+
+/* Estilos para el mensaje cuando no hay elementos */
+.empty-message {
+    text-align: center;
+    color: #535353;
+    font-size: 18px;
+    margin-top: 20px;
+}

@@ -1,13 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .post-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .no-image {
+            color: #999;
+            font-style: italic;
+        }
+        .actions {
+            margin-top: 20px;
+        }
+        .actions a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .actions a:hover {
+            background-color: #0056b3;
+        }
+        .actions a.delete {
+            background-color: #dc3545;
+        }
+        .actions a.delete:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="post-container">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.description }}</p>
 
-<h1>{{post.title}}</h1>
+        {% if post.image %}
+            <img src="{{ post.image.url }}" alt="{{ post.title }}">
+        {% else %}
+            <h3 class="no-image">No hay señal de imágenes</h3>
+        {% endif %}
 
-<p>{{post.description}}</p>
-
-{%  if post.image %}
-<img src="{{ post.image.url }}" alt="">
-{% else %}
-<h3>No hay señal de imagenes</h3>
-{% endif %}
-
-<a href="{% url 'update' post.pk %}">Actualizar</a>
-<a href="{% url 'delete' post.pk %}">Eliminar</a>
+        <div class="actions">
+            <a href="{% url 'update' post.pk %}">Actualizar</a>
+            <a href="{% url 'delete' post.pk %}" class="delete">Eliminar</a>
+        </div>
+    </div>
+</body>
+</html>
