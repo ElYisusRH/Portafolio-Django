@@ -25,6 +25,11 @@
       <a href="{% url 'Create' %}">Create</a>
       <a href="#Logout">Logout</a>
     </nav>
+    <form action="{% url 'logout' %}" method="post">
+
+      {% csrf_token %}
+      ,<button> class="Logout">Logout</button>
+    </form>
   
       {% block content %}
       
