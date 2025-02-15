@@ -29,3 +29,7 @@ class DeletePageView(DeleteView):
     model=Post
     template_name="delete.html"
     success_url = reverse_lazy("home")
+
+#vista para la pagina de inicio
+def WelcomePage(request):
+    return render(request,"welcome.html")
