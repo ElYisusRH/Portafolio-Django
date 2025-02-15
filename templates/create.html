@@ -1,12 +1,50 @@
 {% extends "navbar.html" %}
 
 {% block content %}
-    
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
+<style>
+    /* Fondo azul detrás de todo */
+    body {
+        background-image: url('/static/css/f1.png');
+        margin: 0;
+        padding: 0;
+        min-height: 100vh; /* Asegura que el fondo cubra toda la altura de la pantalla */
+        
+    }
+       
+    /* Estilos para el fondo rojo y bordes redondeados */
+    .form-container {
+        background-image: url('/static/css/f2.jpg');
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 500px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-    {{form.as_p}}
+    /* Estilos para los elementos del formulario */
+    .form-container input[type="submit"] {
+        background-color: white;
+        color: rgb(0, 0, 0);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 
-    <input type="submit" value="Save">
-</form>
+    .form-container input[type="submit"]:hover {
+        background-color: #f0f0f0;
+    }
+
+    .form-container p {
+        margin: 10px 0;
+    }
+</style>
+
+<div class="form-container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save">
+    </form>
+</div>
 {% endblock %}

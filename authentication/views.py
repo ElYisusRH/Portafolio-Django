@@ -10,4 +10,4 @@ class SingUpView(CreateView):
 
     template_name="registration/singup.html"
     form_class=UserCreationForm
-    success_url=reverse_lazy("home")
+    success_url=reverse_lazy("login")
