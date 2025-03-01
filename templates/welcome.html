@@ -1,17 +1,33 @@
 
+{% load static %}
 
-{% ir user.is_authenticated %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida</title>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo en la parte superior -->
+        <div class="logo">
+            <img src="{% static 'image/logo.jpg' %}" alt="logo">
+        </div>
 
-<h3>Bienvenido {{user.name}}</h3>
-
-<a href="{% url 'home' %}">Ingresar</a>
-
-{% else %}
-
-    <p>Crea tu cuenta, te esperamos</p>
-    <a href="{% url 'signup' %}">Sign up</a>
-    
-    <p>Si ya posees una cuenta, ingresa por aca</p>
-    <a href="{% url 'login' %}">Login</a>
-
-    {% endif %}
+        <!-- Contenido dinámico según autenticación -->
+        {% if user.is_authenticated %}
+            <h3>Bienvenido {{ user.username }}</h3>
+            <a href="{% url 'home' %}" class="btn">Ingresar</a>
+        {% else %}
+            <p>Crea tu cuenta, te esperamos</p>
+            <a href="{% url 'singup' %}" class="btn">Sign up</a>
+            
+            <p>Si ya posees una cuenta, ingresa por acá</p>
+            <a href="{% url 'login' %}" class="btn">Login</a>
+        {% endif %}
+    </div>
+</body>
+</html>

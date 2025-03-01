@@ -1,0 +1,58 @@
+/* Estilos generales del body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/static/css/f1.png'); /* Fondo azul */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+/* Caja del formulario */
+.form-box {
+    background-image: url('/static/css/f2.jpg'); /* Fondo blanco para el formulario */
+    padding: 30px;
+    border-radius: 15px; /* Bordes suaves */
+    border: 2px solid #000000; /* Borde rojo */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    text-align: center;
+}
+
+/* Campos del formulario */
+.form-group p {
+    margin: 15px 0;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Botón de envío */
+.submit-button {
+    background-color: #963131; /* Fondo rojo */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #cc0000; /* Color rojo más oscuro al pasar el mouse */
+}

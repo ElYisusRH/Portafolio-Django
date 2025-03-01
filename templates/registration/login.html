@@ -1,8 +1,23 @@
+{% load static %}
 
-<form action="" method="post">
-
-    {{% csrf_token %}}
-    {{form.as_p}}
-
-    <input type="submit" value="Login">
-</form>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Centrado con Bordes Suaves</title>
+    <!-- Enlazar el archivo CSS -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="container">
+        <form action="" method="post" class="form-box">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <input type="submit" value="Login" class="submit-button">
+        </form>
+    </div>
+</body>
+</html>

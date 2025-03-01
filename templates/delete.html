@@ -1,11 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Datos</title>
+    <style>
+        /* Estilo para el fondo de la página */
+        body {
+            background-image: url('/static/css/f1.png');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
+        /* Estilo para el contenedor del formulario */
+        .form-container {
+            background-image: url('/static/css/f2.jpg');
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
 
+        /* Estilo para el botón de eliminar */
+        input[type="submit"] {
+            background-color: rgb(110, 33, 33);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-<form metod="post">
-    {% csrf_token %}
-    <p>Seguro que quieres eliminar los datos?</p>
-    {{form.as_p}}
+        input[type="submit"]:hover {
+            background-color: darkred;
+        }
 
-    <input type="submit" value="Eliminar">
+        /* Estilo para los párrafos */
+        p {
+            margin: 0 0 15px 0;
+            font-size: 18px;
+            color: #333;
+        }
 
-</form>
+        /* Estilo para los campos del formulario */
+        .form-container p {
+            margin-bottom: 10px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-container input, .form-container select, .form-container textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form method="post">
+            {% csrf_token %}
+            <p>¿Seguro que quieres eliminar los datos?</p>
+            {{ form.as_p }}
+            <input type="submit" value="Eliminar">
+        </form>
+    </div>
+</body>
+</html>

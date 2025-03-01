@@ -1,0 +1,56 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/static/css/f1.png');/* Fondo blanco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Cubre toda la altura de la pantalla */
+}
+
+/* Contenedor principal */
+.container {
+    text-align: center;
+    background-image: url('/static/css/f2.jpg'); /* Fondo naranja */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Logo */
+.logo img {
+
+    max-width: 100px; /* Tamaño del logo */
+    margin-bottom: 20px;
+}
+
+/* Títulos y textos */
+h3 {
+    color: #000000; /* Texto blanco */
+    margin-bottom: 20px;
+}
+
+p {
+    color: #000000; /* Texto blanco */
+    margin: 10px 0;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000000; /* Texto naranja */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #f0f0f0; /* Efecto hover */
+}
